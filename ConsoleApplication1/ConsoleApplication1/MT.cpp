@@ -49,7 +49,6 @@ The original version of http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/C
 - change N -> MT_N
 - change the file name "mt19937ar.c" -> "MT.h"
 */
-#include "MT.h"
 
 /* Period parameters */
 #define MT_N 624

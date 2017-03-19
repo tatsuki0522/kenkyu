@@ -2,8 +2,8 @@
 //#include "MT.h"
 //#include "main.h"
 //#include "define.h"
-//#include "DxLib.h"
-#include "dxlib\DxLib.h"
+#include "DxLib.h"
+//#include "dxlib\DxLib.h"
 
 void Game()
 {

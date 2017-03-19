@@ -1,11 +1,11 @@
 #ifndef _MAIN_H_
-#define _MAIN_H
+#define _MAIN_H_
 
 struct mover{
-	bool f;//存在フラグ
-	int x, y;
+	bool f;		//存在フラグ
+	int x, y;	//座標情報
 	int kind;	//	種類
-	int go;	//向き、方向
+	int way;		//向き、方向
 };
 
 #endif

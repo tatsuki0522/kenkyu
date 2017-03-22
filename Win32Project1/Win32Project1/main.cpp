@@ -15,7 +15,7 @@ void Game()
 	while (1) {
 		ProcessMessage();	//プロセスの連絡
 		ClearDrawScreen();	//画面の削除
-		Draw();				//絵画をすべて処理する
+		Draw();				//絵画をすべて処理
 		ScreenFlip();		//裏画面を表画面に反映
 	}
 }

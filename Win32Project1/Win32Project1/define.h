@@ -8,5 +8,7 @@
 //数に関する定義
 #define MAX_MOB 30
 #define MAX_BALL 100
+//ファイルに関する情報
+#define BOLL_SMALL_GRAPH "system/photos/enemyboll_m.png"
 /////
 #endif

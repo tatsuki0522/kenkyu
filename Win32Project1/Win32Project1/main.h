@@ -8,7 +8,7 @@ struct Mob_t{
 	int way;		//Œü‚«A•ûŒü
 };
 
-struct Bool_t {
+struct Boll_t {
 	bool f;
 	int x, y;
 	int kind;

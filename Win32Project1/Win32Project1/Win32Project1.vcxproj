@@ -14,13 +14,14 @@
     <ProjectGuid>{40D6AA56-B98C-450A-973F-FA8AF4228922}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Win32Project1</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -84,13 +85,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bool(m).cpp" />
+    <ClCompile Include="bool(w).cpp" />
+    <ClCompile Include="enemy(m).cpp" />
+    <ClCompile Include="enemy(y).cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mt.cpp" />
+    <ClCompile Include="player%28s%29.cpp" />
+    <ClCompile Include="player(r).cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bool(m).h" />
+    <ClInclude Include="bool(w).h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="enemy(m).h" />
+    <ClInclude Include="enemy(y).h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="mt.h" />
+    <ClInclude Include="player(r).h" />
+    <ClInclude Include="player(s).h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

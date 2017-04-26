@@ -85,14 +85,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="bool(m).cpp" />
-    <ClCompile Include="bool(w).cpp" />
-    <ClCompile Include="enemy(m).cpp" />
-    <ClCompile Include="enemy(y).cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mt.cpp" />
-    <ClCompile Include="player%28s%29.cpp" />
-    <ClCompile Include="player(r).cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bool(m).h" />

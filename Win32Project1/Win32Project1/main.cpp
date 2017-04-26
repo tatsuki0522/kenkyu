@@ -30,17 +30,22 @@ void Button(struct Button_t *button)
 	if (CheckHitKey(KEY_INPUT_RIGHT) == TRUE)button->right = TRUE;
 	else button->right = FALSE;
 	if (CheckHitKey(KEY_INPUT_LEFT) == TRUE)button->left = TRUE;
-	else button->left = TRUE;
+	else button->left = FALSE;
+	if (CheckHitKey(KEY_INPUT_Z) == TRUE)button->z = TRUE;
+	else button->z = FALSE;
+
+	
 }
 
 void Game(struct Button_t *button)
 {
 	while (1) {
-		ProcessMessage();	//プロセスの連絡
-		ClearDrawScreen();	//画面の削除
+		ProcessMessage();			//プロセスの連絡
+		ClearDrawScreen();			//画面の削除
 		Draw(button);				//絵画をすべて処理
-		Button(button);
-		ScreenFlip();		//裏画面を表画面に反映
+		Button(button);				//ボタンの入力状況を取得
+		if (CheckHitKey(KEY_INPUT_ESCAPE) == TRUE)break;
+		ScreenFlip();				//裏画面を表画面に反映
 	}
 }
 

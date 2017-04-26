@@ -89,15 +89,9 @@
     <ClCompile Include="mt.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bool(m).h" />
-    <ClInclude Include="bool(w).h" />
     <ClInclude Include="define.h" />
-    <ClInclude Include="enemy(m).h" />
-    <ClInclude Include="enemy(y).h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="mt.h" />
-    <ClInclude Include="player(r).h" />
-    <ClInclude Include="player(s).h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

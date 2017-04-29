@@ -13,5 +13,21 @@
 //ファイルに関する情報
 #define BOLL_MIDIUM_GRAPH "system/photos/enemyboll_m.png"
 #define BOLL_SMALL_GRAPH "system/photos/enemyboll_small.png"
-/////
+//ビット演算
+#define BIT_FLAG_1 0X01
+#define BIT_FLAG_2 0X02
+#define BIT_FLAG_4 0X04
+#define BIT_FLAG_8 0X08
+#define BIT_FLAG_16 0X10
+#define BIT_FLAG_32 0X20
+#define BIT_FLAG_64 0X40
+#define BIT_FLAG_128 0X80
+
+#define BUTTON_UP BIT_FLAG_1
+#define BUTTON_DOWN BIT_FLAG_4
+#define BUTTON_RIGHT BIT_FLAG_2
+#define BUTTON_LEFT BIT_FLAG_8
+#define BUTTON_Z BIT_FLAG_16
+#define BUTTON_SHIFT BIT_FLAG_32
+
 #endif

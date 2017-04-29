@@ -13,7 +13,7 @@ void Draw(struct Button_t *button)
 {
 	
 	DrawFormatString(20, 0, GetColor(255, 255, 255), "x=%d,y=%d", mx, my);
-	DrawFormatString(0, 20, GetColor(255, 255, 255), "up=%d,down=%d",button->up,button->down);
+	DrawFormatString(0, 20, GetColor(255, 255, 255), "button=%X",(button->button));
 	DrawLine(0, 0, 0, 500, GetColor(255, 255, 255));
 	DrawLine(380, 0,380, 500, GetColor(255, 255, 255));
 	DrawRotaGraph(288, 400, 1, 0, boll_midium_graph, 1, 0);
@@ -23,6 +23,7 @@ void Draw(struct Button_t *button)
 void Button(struct Button_t *button)
 {
 	GetMousePoint(&mx, &my);
+	/*
 	if (CheckHitKey(KEY_INPUT_UP) == TRUE)button->up = TRUE;
 	else button->up = FALSE;
 	if (CheckHitKey(KEY_INPUT_DOWN) == TRUE)button->down = TRUE;
@@ -30,17 +31,34 @@ void Button(struct Button_t *button)
 	if (CheckHitKey(KEY_INPUT_RIGHT) == TRUE)button->right = TRUE;
 	else button->right = FALSE;
 	if (CheckHitKey(KEY_INPUT_LEFT) == TRUE)button->left = TRUE;
-	else button->left = TRUE;
+	else button->left = FALSE;
+	if (CheckHitKey(KEY_INPUT_Z) == TRUE)button->z = TRUE;
+	else button->z = FALSE;
+	*/
+	if (CheckHitKey(KEY_INPUT_UP) == TRUE)button->button |= BUTTON_UP;
+	else button->button &= ~BUTTON_UP;
+	if (CheckHitKey(KEY_INPUT_DOWN) == TRUE) button->button |= BUTTON_DOWN;
+	else button->button &= ~BUTTON_DOWN;
+	if (CheckHitKey(KEY_INPUT_RIGHT) == TRUE)button->button |= BUTTON_RIGHT;
+	else button->button &= ~BUTTON_RIGHT;
+	if (CheckHitKey(KEY_INPUT_LEFT) == TRUE)button->button |= BUTTON_LEFT;
+	else button->button &= ~BUTTON_LEFT;
+	if (CheckHitKey(KEY_INPUT_Z) == TRUE)button->button |= BUTTON_Z;
+	else button->button &= ~BUTTON_Z;
+	if (CheckHitKey(KEY_INPUT_LSHIFT) == TRUE | CheckHitKey(KEY_INPUT_RSHIFT) == TRUE) button->button |= BUTTON_SHIFT;
+	else button->button &= ~BUTTON_SHIFT;
 }
 
 void Game(struct Button_t *button)
 {
+	button->button = 0;
 	while (1) {
-		ProcessMessage();	//プロセスの連絡
-		ClearDrawScreen();	//画面の削除
+		ProcessMessage();			//プロセスの連絡
+		ClearDrawScreen();			//画面の削除
 		Draw(button);				//絵画をすべて処理
-		Button(button);
-		ScreenFlip();		//裏画面を表画面に反映
+		Button(button);				//ボタンの入力状況を取得
+		if (CheckHitKey(KEY_INPUT_ESCAPE) == TRUE)break;
+		ScreenFlip();				//裏画面を表画面に反映
 	}
 }
 

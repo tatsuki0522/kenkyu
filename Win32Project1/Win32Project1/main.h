@@ -3,7 +3,7 @@
 
 struct Mob_t{
 	bool f;		//存在フラグ
-	int x, y;	//座標情報
+	double x, y;	//座標情報
 	int kind;	//	種類
 	int way;		//向き、方向
 };
@@ -16,7 +16,7 @@ struct Boll_t {
 };
 
 struct Myself_t {
-	int x, y;
+	double x, y;
 	int score;	//スコア
 	int res;	//残基	residueの略
 };
@@ -24,6 +24,7 @@ struct Myself_t {
 struct Button_t {
 	//各ボタンの状態	0=無効,1=有効
 	//restは長押し対策	restrictionの略
+	char button, rest;
 	bool up;
 	bool rest_up;
 	bool right;

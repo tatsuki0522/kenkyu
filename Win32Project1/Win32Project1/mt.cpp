@@ -1,3 +1,6 @@
+//このソースコードは編集すると乱数処理に異常が出るので絶対に変更しないこと！
+
+
 /*
 A C-program for MT19937, with initialization improved 2002/1/26.
 Coded by Takuji Nishimura and Makoto Matsumoto.

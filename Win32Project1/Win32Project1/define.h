@@ -1,5 +1,6 @@
 #ifndef _DEFINE_H_
 #define _DEFINE_H_
+
 #define TRUE 1
 #define FALSE 0
 //Œü‚«‚ÉŠÖ‚·‚é’è‹`

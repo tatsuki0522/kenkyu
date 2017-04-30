@@ -11,47 +11,40 @@ int mx, my;
 
 void Draw(struct Button_t *button)
 {
-	
+
 	DrawFormatString(20, 0, GetColor(255, 255, 255), "x=%d,y=%d", mx, my);
-	DrawFormatString(0, 20, GetColor(255, 255, 255), "button=%X",(button->button));
+	DrawFormatString(0, 20, GetColor(255, 255, 255), "button=%Xrest=%X", (button->button), button->rest);
 	DrawLine(0, 0, 0, 500, GetColor(255, 255, 255));
-	DrawLine(380, 0,380, 500, GetColor(255, 255, 255));
+	DrawLine(380, 0, 380, 500, GetColor(255, 255, 255));
 	DrawRotaGraph(288, 400, 1, 0, boll_midium_graph, 1, 0);
 	DrawRotaGraph(200, 200, 1, 0, boll_small_graph, 1, 0);
 }
 
+void Button_rest(int key_state, char *button, char *rest, char type)
+{
+	*rest &= ~type;
+	if (key_state == TRUE) {
+		if (!(type & *button)) *rest |= type;
+		*button |= type;
+	}
+	else *button &= ~type;
+	
+}
+
 void Button(struct Button_t *button)
 {
-	GetMousePoint(&mx, &my);
-	/*
-	if (CheckHitKey(KEY_INPUT_UP) == TRUE)button->up = TRUE;
-	else button->up = FALSE;
-	if (CheckHitKey(KEY_INPUT_DOWN) == TRUE)button->down = TRUE;
-	else button->down = FALSE;
-	if (CheckHitKey(KEY_INPUT_RIGHT) == TRUE)button->right = TRUE;
-	else button->right = FALSE;
-	if (CheckHitKey(KEY_INPUT_LEFT) == TRUE)button->left = TRUE;
-	else button->left = FALSE;
-	if (CheckHitKey(KEY_INPUT_Z) == TRUE)button->z = TRUE;
-	else button->z = FALSE;
-	*/
-	if (CheckHitKey(KEY_INPUT_UP) == TRUE)button->button |= BUTTON_UP;
-	else button->button &= ~BUTTON_UP;
-	if (CheckHitKey(KEY_INPUT_DOWN) == TRUE) button->button |= BUTTON_DOWN;
-	else button->button &= ~BUTTON_DOWN;
-	if (CheckHitKey(KEY_INPUT_RIGHT) == TRUE)button->button |= BUTTON_RIGHT;
-	else button->button &= ~BUTTON_RIGHT;
-	if (CheckHitKey(KEY_INPUT_LEFT) == TRUE)button->button |= BUTTON_LEFT;
-	else button->button &= ~BUTTON_LEFT;
-	if (CheckHitKey(KEY_INPUT_Z) == TRUE)button->button |= BUTTON_Z;
-	else button->button &= ~BUTTON_Z;
-	if (CheckHitKey(KEY_INPUT_LSHIFT) == TRUE | CheckHitKey(KEY_INPUT_RSHIFT) == TRUE) button->button |= BUTTON_SHIFT;
-	else button->button &= ~BUTTON_SHIFT;
+	Button_rest(CheckHitKey(KEY_INPUT_UP), &button->button, &button->rest, BUTTON_UP);
+	Button_rest(CheckHitKey(KEY_INPUT_RIGHT), &button->button, &button->rest, BUTTON_RIGHT);
+	Button_rest(CheckHitKey(KEY_INPUT_DOWN), &button->button, &button->rest, BUTTON_DOWN);
+	Button_rest(CheckHitKey(KEY_INPUT_LEFT), &button->button, &button->rest, BUTTON_LEFT);
+	Button_rest(CheckHitKey(KEY_INPUT_Z), &button->button, &button->rest, BUTTON_Z);
+	Button_rest((CheckHitKey(KEY_INPUT_RSHIFT) | CheckHitKey(KEY_INPUT_LSHIFT)), &button->button, &button->rest, BUTTON_SHIFT);
 }
 
 void Game(struct Button_t *button)
 {
 	button->button = 0;
+	button->rest = 0;
 	while (1) {
 		ProcessMessage();			//プロセスの連絡
 		ClearDrawScreen();			//画面の削除

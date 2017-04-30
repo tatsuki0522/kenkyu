@@ -23,21 +23,9 @@ struct Myself_t {
 
 struct Button_t {
 	//各ボタンの状態	0=無効,1=有効
+	//ビットフラグについてはdefine.hを参照。
 	//restは長押し対策	restrictionの略
 	char button, rest;
-	bool up;
-	bool rest_up;
-	bool right;
-	bool rest_right;
-	bool down;
-	bool rest_down;
-	bool left;
-	bool rest_left;
-	bool enter;
-	bool rest_enter;
-	bool esc;
-	bool z;
-	bool rest_z;
 };
 
 #endif

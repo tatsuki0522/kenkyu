@@ -87,6 +87,8 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mt.cpp" />
+    <ClCompile Include="boll.cpp" />
+    <ClCompile Include="boll.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="define.h" />

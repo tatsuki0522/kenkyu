@@ -53,7 +53,7 @@ void Game(struct Button_t *button,struct Boll_t *boll)
 
 		Draw(button);				//ŠG‰æ‚ğ‚·‚×‚Äˆ—
 		Button(button);				//ƒ{ƒ^ƒ“‚Ì“ü—Íó‹µ‚ğæ“¾
-		//Boll_main();
+		Boll_main();
 		if (CheckHitKey(KEY_INPUT_ESCAPE) == TRUE)break;
 
 		ScreenFlip();				//— ‰æ–Ê‚ğ•\‰æ–Ê‚É”½‰f

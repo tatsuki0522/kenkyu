@@ -5,7 +5,8 @@ struct Mob_t{
 	bool f;		//存在フラグ
 	double x, y;	//座標情報
 	int kind;	//	種類
-	int way;		//向き、方向
+	int spd;
+	int angle;		//向き、方向
 };
 
 struct Boll_t {

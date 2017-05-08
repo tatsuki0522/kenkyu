@@ -3,6 +3,7 @@
 #include "main.h"
 #include "define.h"
 #include "DxLib.h"
+#include "boll.h"
 //#include "dxlib\DxLib.h"
 
 int boll_midium_graph;

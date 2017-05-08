@@ -90,11 +90,13 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mt.cpp" />
     <ClCompile Include="boll.h" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="define.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="mt.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

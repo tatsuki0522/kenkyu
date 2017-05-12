@@ -3,7 +3,7 @@
 #include"define.h"
 #include<DxLib.h>
 
-void Boll_main(struct Ball_t *ball){
+void Ball_main(struct Ball_t *ball){
 
 }
 

@@ -11,7 +11,7 @@ int ball_small_graph;
 int graph_player;
 int mx, my;
 
-void Draw(struct Button_t *button)
+void Draw(struct Button_t *button,struct Myself_t *mys,struct Ball_t *ball)
 {
 	DrawFormatString(1560, 115, GetColor(255, 255, 255), "Score:");
 	DrawFormatString(20, 0, GetColor(255, 255, 255), "x=%d,y=%d", mx, my);
@@ -20,7 +20,8 @@ void Draw(struct Button_t *button)
 	DrawLine(1200, 0, 1200, 1080, GetColor(255, 255, 255));
 	DrawRotaGraph(288, 400, 1, 0, ball_midium_graph, 1, 0);
 	DrawRotaGraph(200, 200, 1, 0, ball_small_graph, 1, 0);
-	DrawRotaGraph(mx, my, 1, 0, graph_player, 1, 0);
+	DrawRotaGraph((mys->x), mys->y, 1, 0, graph_player, 1, 0);	//警告が出るが問題なし
+	for (int i = 0; i < MAX_BALL; i++)if ((ball)->f == TRUE)DrawRotaGraph((ball + i)->x, (ball + i)->y, 1, 0, ball_small_graph, 1, 0);
 }
 
 void Button_rest(int key_state, char *button, char *rest, char type)
@@ -53,7 +54,7 @@ void Game(struct Button_t *button,struct Ball_t *ball,struct Myself_t *mys)
 		ProcessMessage();			//プロセスの連絡
 		ClearDrawScreen();			//画面の削除
 
-		Draw(button);				//絵画をすべて処理
+		Draw(button,mys,ball);				//絵画をすべて処理
 		Button(button);				//ボタンの入力状況を取得
 		Ball_main(ball);
 		Player_main(ball, button,mys);
@@ -68,6 +69,12 @@ void Load()
 	ball_midium_graph = LoadGraph(BALL_MIDIUM_GRAPH);
 	ball_small_graph = LoadGraph(BALL_SMALL_GRAPH);
 	graph_player = LoadGraph(GRAPH_PLAYER);
+}
+
+void Ini(struct Myself_t *mys)
+{
+	mys->x = 0;
+	mys->y = 0;
 }
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
@@ -86,6 +93,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	mob = (Mob_t *)malloc(sizeof(mob)*MAX_MOB);
 	balls = (Ball_t *)malloc(sizeof(Ball_t)*MAX_BALL);
 	mys = (Myself_t *)malloc(sizeof(Myself_t));
+	/////初期化//////
+	Ini(mys);
 	////////ファイルの読み込み///////
 	Load();
 	///////関数への処理渡し//////

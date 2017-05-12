@@ -9,6 +9,7 @@
 
 int boll_midium_graph;
 int boll_small_graph;
+int graph_player;
 int mx, my;
 
 void Draw(struct Button_t *button)
@@ -66,6 +67,7 @@ void Load()
 {
 	boll_midium_graph = LoadGraph(BOLL_MIDIUM_GRAPH);
 	boll_small_graph = LoadGraph(BOLL_SMALL_GRAPH);
+	graph_
 }
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)

@@ -5,7 +5,6 @@
 #include "DxLib.h"
 #include "boll.h"
 #include "Player.h"
-//#include "dxlib\DxLib.h"
 
 int ball_midium_graph;
 int ball_small_graph;

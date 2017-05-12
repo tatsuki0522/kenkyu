@@ -7,6 +7,7 @@
 
 int boll_midium_graph;
 int boll_small_graph;
+int graph_player;
 int mx, my;
 
 void Draw(struct Button_t *button)
@@ -18,6 +19,7 @@ void Draw(struct Button_t *button)
 	DrawLine(380, 0, 380, 500, GetColor(255, 255, 255));
 	DrawRotaGraph(288, 400, 1, 0, boll_midium_graph, 1, 0);
 	DrawRotaGraph(200, 200, 1, 0, boll_small_graph, 1, 0);
+	DrawRotaGraph(100, 100, 1, 0, graph_player);
 }
 
 void Button_rest(int key_state, char *button, char *rest, char type)
@@ -59,6 +61,7 @@ void Load()
 {
 	boll_midium_graph = LoadGraph(BOLL_MIDIUM_GRAPH);
 	boll_small_graph = LoadGraph(BOLL_SMALL_GRAPH);
+	graph_player = LoadGraph(GRAPH_PLAYER);
 }
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)

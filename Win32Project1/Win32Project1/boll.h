@@ -1,2 +1,2 @@
 #pragma once
-void Boll_main(struct Boll_t *boll);
+void Ball_main(struct Boll_t *boll);

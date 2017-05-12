@@ -12,8 +12,8 @@
 #define MAX_MOB 30
 #define MAX_BALL 100
 //ファイルに関する情報
-#define BOLL_MIDIUM_GRAPH "system/photos/enemyboll_m.png"
-#define BOLL_SMALL_GRAPH "system/photos/enemyboll_small.png"
+#define BALL_MIDIUM_GRAPH "system/photos/enemyboll_m.png"
+#define BALL_SMALL_GRAPH "system/photos/enemyboll_small.png"
 #define GRAPH_PLAYER "system/photos/player.png"
 //ビット演算
 #define BIT_FLAG_1 0X01

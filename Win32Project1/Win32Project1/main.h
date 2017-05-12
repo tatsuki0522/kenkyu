@@ -9,7 +9,7 @@ struct Mob_t{
 	int angle;		//Œü‚«A•ûŒü
 };
 
-struct Boll_t {
+struct Ball_t {
 	bool f;
 	int x, y;
 	int kind;

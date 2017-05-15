@@ -11,6 +11,7 @@
 //数に関する定義
 #define MAX_MOB 30
 #define MAX_BALL 100
+#define SPEED_MINE 5
 //ファイルに関する情報
 #define BALL_MIDIUM_GRAPH "system/photos/enemyboll_m.png"
 #define BALL_SMALL_GRAPH "system/photos/enemyboll_small.png"
